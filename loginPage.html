@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="icon" href="img/faviconLoginPage.svg">
+  <script defer src="js/loginPage.js"></script>
+</head>
+<body class="body-login">
+  <header class="header"></header>
+  <main class="main popup">
+    <div class="container popup__container">
+      <div class="popup-wrap">
+        <div class="popup__body">
+          <h1 class="popup__title">
+            Войти
+          </h1>
+          <h2 class="popup__subtitle">
+            Авторизация с помощью логин/пароль
+          </h2>
+          <form class="popup__form" id="form-loginPage" name="form-loginPage" action="https://jsonplaceholder.typicode.com/posts" method="post">
+            <label class="popup__label" for="login">
+              <span class="visually-hidden">Логин</span>
+              <input class="popup__input" id="login" type="text" name="login" placeholder="Логин" required>
+            </label>
+            <label class="popup__label last-label" for="password">
+              <span class="visually-hidden">Пароль</span>
+              <input class="popup__input password-input" id="password" type="password" name="password" placeholder="Пароль" required>
+              <a class="password-control" href="#"></a>
+            </label>
+            <button class="btn-reset btn popup__btn" aria-label="Войти" type="submit" id="to_send">
+              <span>
+                Войти
+              </span>
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 12.913H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.3335 6.24631L19.9999 12.913L13.3334 19.5796" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/just-validate@4.0.2/dist/just-validate.production.min.js"></script>
+</body>
+</html>
