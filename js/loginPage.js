@@ -27,6 +27,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
   });
+
+  async function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const data = serializeForm(event.target);
+    const { status } = await sendData(data);
+    if (status === 200) {
+      alert('Пароль и логин сохранены')
+    }
+  };
+
+  form.addEventListener('submit', handleFormSubmit);
+
+  function serializeForm(form) {
+    const { elements } = form;
+
+    const data = new FormData()
+
+    Array.from(elements)
+      .filter((item) => !!item.name)
+      .forEach((element) => {
+        const { name, value } = element;
+
+        data.append(name, value);
+      })
+
+    return data
+  }
+
+  async function sendData(data) {
+    return await fetch('/api/apply/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'multipart/form-data' },
+      body: data,
+    })
+  }
+
 });
 
 const control = document.querySelector('.password-control');
